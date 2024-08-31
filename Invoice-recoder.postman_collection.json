@@ -1,0 +1,265 @@
+{
+	"info": {
+		"_postman_id": "375f23ae-f1fb-498b-ad8e-ef33740677e7",
+		"name": "Invoice-recoder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37605902"
+	},
+	"item": [
+		{
+			"name": "conexion-database",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8090/api/check-database",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"check-database"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"idbi@example.pe\",\r\n    \"password\": \"retobackend\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/v1/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "totals-vouchers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwOTAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNzI1MTA2NTM5LCJleHAiOjE3MjUxMTAxMzksIm5iZiI6MTcyNTEwNjUzOSwianRpIjoiU0VjTGpFNWsySEQ3bm9qYSIsInN1YiI6IjlhNWE0OWNlLTc3YWYtNDg2ZC04ZjAzLWYzMzYyYjU3NzJmZiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.NN67T6ZrOyQ3uShoBomPIEvFJYzpcdG9xfRMB3-Dxck",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/v1/vouchers/totals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"vouchers",
+						"totals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-voucher",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwOTAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNzI1MTA2NTM5LCJleHAiOjE3MjUxMTAxMzksIm5iZiI6MTcyNTEwNjUzOSwianRpIjoiU0VjTGpFNWsySEQ3bm9qYSIsInN1YiI6IjlhNWE0OWNlLTc3YWYtNDg2ZC04ZjAzLWYzMzYyYjU3NzJmZiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.NN67T6ZrOyQ3uShoBomPIEvFJYzpcdG9xfRMB3-Dxck",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/api/v1/vouchers/delete/9a5a4ac1-effc-4fd0-939b-a151ab1e4bf2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"vouchers",
+						"delete",
+						"9a5a4ac1-effc-4fd0-939b-a151ab1e4bf2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save-voucher",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwOTAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNzI1MTEzOTQwLCJleHAiOjE3MjUxMTc1NDAsIm5iZiI6MTcyNTExMzk0MCwianRpIjoiYkJYWXhZMlVwOFJxM1RNSSIsInN1YiI6IjlhNWE0OWNlLTc3YWYtNDg2ZC04ZjAzLWYzMzYyYjU3NzJmZiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.AGs-mqBNwi_OltUeYtW4TAMxnzQyhDMhOmCkl4gYenU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/C:/Users/Milagros/Downloads/ejemplo-2.xml"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/v1/vouchers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"vouchers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all-vouchers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwOTAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNzI1MTA2NTM5LCJleHAiOjE3MjUxMTAxMzksIm5iZiI6MTcyNTEwNjUzOSwianRpIjoiU0VjTGpFNWsySEQ3bm9qYSIsInN1YiI6IjlhNWE0OWNlLTc3YWYtNDg2ZC04ZjAzLWYzMzYyYjU3NzJmZiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.NN67T6ZrOyQ3uShoBomPIEvFJYzpcdG9xfRMB3-Dxck",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/v1/vouchers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"vouchers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchl-vouchers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwOTAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNzI1MTEzOTQwLCJleHAiOjE3MjUxMTc1NDAsIm5iZiI6MTcyNTExMzk0MCwianRpIjoiYkJYWXhZMlVwOFJxM1RNSSIsInN1YiI6IjlhNWE0OWNlLTc3YWYtNDg2ZC04ZjAzLWYzMzYyYjU3NzJmZiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.AGs-mqBNwi_OltUeYtW4TAMxnzQyhDMhOmCkl4gYenU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"serie\" : \"F002-3625\",\r\n    \"number\" : \"F002-3625\",\r\n    \"start_date\" : \"2023-01-01\",\r\n    \"end_date\" : \"2024-10-12\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/v1/vouchers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"vouchers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
